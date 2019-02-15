@@ -10,10 +10,6 @@ const swap = (str) => {
   return result
 }
 
-// Tests
-console.log('Test swap:', swap('apple') === 'palpe')
-console.log('Test swap:', swap('lemonade') === 'elomaned')
-
 const swapReduce = (str) => {
   let result = [...str].reduce((acc, current, idx) => {
     if ((idx + 1) % 2 === 0) {
@@ -24,11 +20,6 @@ const swapReduce = (str) => {
   str.length % 2 && (result += str[str.length - 1])
   return result
 }
-
-// Tests
-console.log('Test swapReduce:', swapReduce('apple') === 'palpe')
-console.log('Test swapReduce:', swapReduce('lemonade') === 'elomaned')
-
 
 const swapRecursive = (str) => {
   return function wrap (idx = 1, result = '') {
@@ -46,5 +37,11 @@ const swapRecursive = (str) => {
 }
 
 // Tests
+console.log('Test swap:', swap('apple') === 'palpe')
+console.log('Test swap:', swap('lemonade') === 'elomaned')
+
+console.log('Test swapReduce:', swapReduce('apple') === 'palpe')
+console.log('Test swapReduce:', swapReduce('lemonade') === 'elomaned')
+
 console.log('Test swapRecursive:', swapRecursive('apple') === 'palpe')
 console.log('Test swapRecursive:', swapRecursive('lemonade') === 'elomaned')
